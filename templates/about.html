@@ -15,8 +15,12 @@
         </div>
         <br>
 
-        {% if title %}
-            <div> Value : {{ title }}</div>
+        {% if tasks %}
+            <div> Tasks list : </div><br>
+
+            {% for task in tasks %}
+                <div class="">{{task.title}}</div>
+            {%endfor%}
         {% endif %}
     </form>
 {% endblock main %}
