@@ -2,5 +2,21 @@
 
 
 {% block main %}
-    <p>Content of the about page </p>
+
+    <form action="/about" method="POST">
+        {{ form.csrf_token() }}
+        
+        <div class="form-group">
+            <label>{{ form.title.label }}</label>
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            {{ form.submit }}
+        </div>
+        <br>
+
+        {% if title %}
+            <div> Value : {{ title }}</div>
+        {% endif %}
+    </form>
 {% endblock main %}
